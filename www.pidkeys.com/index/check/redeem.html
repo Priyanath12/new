@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from www.pidkeys.com/index/check/redeem.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Dec 2022 18:20:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="utf-8">
+<title>Redeem – PidKey</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="renderer" content="webkit">
+
+
+<link rel="shortcut icon" href="https://www.pidkeys.com/assets/img/favicon.ico" />
+
+<link href="../../assets/css/frontend.min64fe.css?v=1.0.31" rel="stylesheet">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+  <script src="/assets/js/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+    var require = {
+        config: {"site":{"name":"PidKey","cdnurl":"","version":"1.0.31","timezone":"Asia\/Shanghai","languages":{"backend":"zh-cn","frontend":"zh-cn"}},"upload":{"cdnurl":"","uploadurl":"\/index\/ajax\/upload","bucket":"local","maxsize":"10mb","mimetype":"jpg,png,bmp,jpeg,gif,webp,zip,rar,xls,xlsx,wav,mp4,mp3,webm,pdf","chunking":false,"chunksize":2097152,"savekey":"\/uploads\/{year}{mon}{day}\/{filemd5}{.suffix}","multipart":[],"multiple":false,"fullmode":false,"thumbstyle":"","storage":"local"},"modulename":"index","controllername":"check","actionname":"redeem","jsname":"frontend\/check","moduleurl":"\/index","language":"zh-cn","__PUBLIC__":"\/","__ROOT__":"\/","__CDN__":"","simditor":{"classname":".editor"}}    };
+</script>
+
+        <link href="../../assets/css/user64fe.css?v=1.0.31" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-white navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header navbar-right">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="https://www.pidkeys.com/">PidKey</a>
+                </div>
+                <div class="collapse navbar-collapse" id="header-navbar">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li class=""><a href="https://www.pidkeys.com/"><b>Home</b></a></li>
+                        <li class=""><a href="pid.html" ><b>Check key</b></a></li>
+                        <li class="active"><a href="redeem.html"><b>Redeem Microsoft</b> </a></li>
+                        <li class=""><a href="iid.html"><b>Get CID</b></a></li>
+                        <li class=""><a href="iso.html"><b>ISo</b></a></li>
+                        <li class=""><a href="about.html"><b>Contact us</b></a></li>
+                        <li class="dropdown">
+                                                        <a href="https://www.pidkeys.com/index/user/index.html" class="dropdown-toggle" data-toggle="dropdown"><b>User center</b> <b class="caret"></b></a>
+                                                        <ul class="dropdown-menu">
+                                                                <li><a href="https://www.pidkeys.com/index/user/login.html"><i class="fa fa-sign-in fa-fw"></i> Sign in</a></li>
+                                <li><a href="https://www.pidkeys.com/index/user/register.html"><i class="fa fa-user-o fa-fw"></i> Sign up</a></li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content">
+            <div class="container">
+    
+    <table style="width: 100%">
+        <tr style="vertical-align:bottom;">
+            <td style="text-align: left"><h5>Enter product key(s) separated by line breaks</h5></td>
+            <td style="text-align: right"><span><b id="day_count">0</b> inspections in the past 24 hours, <b id="remaining_num">20</b> opportunities remaining</span></td>
+        </tr>
+    </table>
+    <div class="form-group">
+        <textarea class="form-control" rows="10" placeholder="93MGM-NTFKD-6BK63-R6FY.." id="textarea_keys"></textarea>
+    </div>
+    <div class="form-group">
+        <table style="width: 100%">
+            <tr style="vertical-align:bottom;">
+                <td><button type="button" class="btn btn-default" id="button_check">Redeem Data Online</button></td>
+                <td style="text-align: right">Proceeded: <span id="total_num">0</span> / <span id="ok_num">0</span>| Speed: <span id="speed">0.000</span>(sec).</td>
+            </tr>
+        </table>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" rows="15"  id="textarea_results"></textarea>
+    </div>
+    <div >
+        <button type="button" id="button_all" class="btn btn-default mr-2">All key(0)</button>
+        <button type="button" id="button_active" class="btn btn-success mr-2">Active(0)</button>
+        <button type="button" id="button_redeemed" class="btn btn-info mr-2">Redeemed(0)</button>
+        <button type="button" id="button_scrapped" class="btn btn-warning mr-2">Scrapped(0)</button>
+        <button type="button" id="button_notfound" class="btn btn-danger mr-2">NotFound(0)</button>
+        <button type="button" id="button_download" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download</button>
+    </div>
+</div>
+
+<div class="container-fluid" id="download_dom" style="display: none">
+    <style>
+        .myth{
+            padding: 5px;
+            text-align: center
+        }
+        .mytr{
+            text-align: center
+        }
+    </style>
+    Please select the key parameter
+    <table width="100%" border="1">
+        <tr class="mytr">
+            <th class="myth">Key</th>
+            <th class="myth">Sub type</th>
+            <th class="myth">Description</th>
+            <th class="myth">Status</th>
+        </tr>
+        <tr class="mytr">
+            <td><label><input type="checkbox" id="key_params_key" checked></label></td>
+            <td><label><input type="checkbox" id="key_params_sub" checked></label></td>
+            <td><label><input type="checkbox" id="key_params_prd" checked></label></td>
+            <td><label><input type="checkbox" id="key_params_status" checked></label></td>
+        </tr>
+    </table>
+    Please select the key type
+    <table width="100%" border="1" style="margin-bottom: 5px">
+        <th class="myth">
+            <tr class="mytr">
+                <th class="myth">Active</th>
+                <th class="myth">Redeemed</th>
+                <th class="myth">Scrapped</th>
+                <th class="myth">NotFound</th>
+            </tr>
+            <tr class="mytr">
+                <td><label><input type="checkbox" id="key_type_active" checked></label></td>
+                <td><label><input type="checkbox" id="key_type_redeemed" checked></label></td>
+                <td><label><input type="checkbox" id="key_type_scrapped" checked></label></td>
+                <td><label><input type="checkbox" id="key_type_notfound" checked></label></td>
+            </tr>
+    </table>
+
+    <button type="button" class="btn btn-success pull-right" id="button_start_download">Start Download</button>
+</div>
+        </main>
+
+        <footer class="footer" style="clear:both">
+            <p class="copyright">Copyright&nbsp;©&nbsp;2022 Lkey All Rights Reserved <a href="https://beian.miit.gov.cn/" target="_blank"></a></p>
+        </footer>
+
+        <script src="../../assets/js/require.min.js" data-main="../../assets/js/require-frontend.min64fe.js?v=1.0.31"></script>
+
+    </body>
+
+<!-- Mirrored from www.pidkeys.com/index/check/redeem.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Dec 2022 18:20:54 GMT -->
+</html>
